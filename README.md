@@ -46,6 +46,9 @@ After you have copied the files into your mount point, you need to change the pe
 sudo chmod 777 /home/archosmountpoint/system/etc/init
 ```
 
+OPTIONAL: You can also download one of the lastest GAPPS packages, unzip it on your computer, and push it to your device in a way so
+the /system files merge correctly (So that files in the GAPPS zip under /system/app correctly merge right into /system/app of the ROM)
+
 After this is done, you can unmount the image file
 ```bash
 sudo umount /home/archosmountpoint
