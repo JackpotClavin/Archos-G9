@@ -25,22 +25,36 @@ While this is being built, you should download the lastest archos.ext4 CM9 ROM i
 
 Once you do this and it is built, you will have to copy the entire /android/system/out/target/product/archos/archos_g9/system folder
 into the archos.ext4 file. 
-You do this by mounting the archos.ext4 image file ("sudo mount -t ext4 -o loop /home/archos.ext4 /home/archosmountpoint")
+You do this by mounting the archos.ext4 image file
+
+```bash
+sudo mount -t ext4 -o loop /home/archos.ext4 /home/archosmountpoint
+```
 
 After mounting, you need to recursively format the /system folder inside your archos mountpoint
-("sudo rm -rf /home/archosmountpoint/system/*")
+```bash
+sudo rm -rf /home/archosmountpoint/system/*
+```
 
 After you have formatted the /system folder inside your mountpoint, you need to copy the newly built files from the ROM into the image
-("sudo cp -rf /android/system/out/target/product/archos/archos_g9/system/* /home/archosmountpoint/")
+```bash
+sudo cp -rf /android/system/out/target/product/archos/archos_g9/system/* /home/archosmountpoint/system/
+```
 
 After you have copied the files into your mount point, you need to change the permissions on the folder under /system/etc/init/
-("sudo chmod 777 /home/archosmountpoint/system/etc/init")
+```bash
+sudo chmod 777 /home/archosmountpoint/system/etc/init
+```
 
 After this is done, you can unmount the image file
-("sudo umount /home/archosmountpoint")
+```bash
+sudo umount /home/archosmountpoint
+```
 
 Then push it to your device
-("adb push /home/archos.ext4 /data/local/")
+```bash
+adb push /home/archos.ext4 /data/local/
+```
 
 If this is your first time flashing CM9, you will have to wipe your /data partition first, then push it to your phone.
 
