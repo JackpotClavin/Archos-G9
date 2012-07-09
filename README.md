@@ -5,8 +5,8 @@
 ### Download sources
 
 ```bash
-mkdir cm9
-cd cm9/
+mkdir android/system
+cd android/system
 curl https://dl-ssl.google.com/dl/googlesource/git-repo/repo > ~/repo
 chmod a+x ~/repo
 repo init -u git://github.com/CyanogenMod/android.git -b ics
@@ -18,26 +18,30 @@ repo sync -j16
 
 ```bash
 source build/envsetup.sh
-brunch archos_g9 -j$"grep -c processor /proc/cpuinfo"
+brunch archos_g9 -j$(grep -c processor /proc/cpuinfo)
 ```
+
+While this is being built, you should download the lastest archos.ext4 CM9 ROM image and then follow the instructions below
 
 Once you do this and it is built, you will have to copy the entire /android/system/out/target/product/archos/archos_g9/system folder
 into the archos.ext4 file. 
-You do this by mounting the archos.ext4 image file "sudo mount -t ext4 -o loop /home/archos.ext4 /home/archosmountpoint"
+You do this by mounting the archos.ext4 image file ("sudo mount -t ext4 -o loop /home/archos.ext4 /home/archosmountpoint")
 
 After mounting, you need to recursively format the /system folder inside your archos mountpoint
-"sudo rm -rf /home/archosmountpoint/system/*"
+("sudo rm -rf /home/archosmountpoint/system/*")
 
 After you have formatted the /system folder inside your mountpoint, you need to copy the newly built files from the ROM into the image
-"sudo cp -rf /android/system/out/target/product/archos/archos_g9/system/* /home/archosmountpoint/"
+("sudo cp -rf /android/system/out/target/product/archos/archos_g9/system/* /home/archosmountpoint/")
 
 After you have copied the files into your mount point, you need to change the permissions on the folder under /system/etc/init/
-"sudo chmod 777 /home/archosmountpoint/system/etc/init"
+("sudo chmod 777 /home/archosmountpoint/system/etc/init")
 
 After this is done, you can unmount the image file
-"sudo umount /home/archosmountpoint"
+("sudo umount /home/archosmountpoint")
 
 Then push it to your device
-"adb push /home/archos.ext4 /data/local/"
+("adb push /home/archos.ext4 /data/local/")
+
+If this is your first time flashing CM9, you will have to wipe your /data partition first, then push it to your phone.
 
 Reboot and enjoy!
