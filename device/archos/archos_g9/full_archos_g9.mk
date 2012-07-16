@@ -39,7 +39,6 @@ PRODUCT_COPY_FILES += \
 	$(DEVICE_PREBUILT)/lib/egl/libGLESv1_CM_POWERVR_SGX540_120.so:system/lib/egl/libGLESv1_CM_POWERVR_SGX540_120.so \
 	$(DEVICE_PREBUILT)/lib/egl/libGLESv2_POWERVR_SGX540_120.so:system/lib/egl/libGLESv2_POWERVR_SGX540_120.so \
 	$(DEVICE_PREBUILT)/lib/hw/gralloc.omap4.so:system/lib/hw/gralloc.omap4.so \
-	$(DEVICE_PREBUILT)/vendor/lib/hw/hwcomposer.omap4.so:system/vendor/lib/hw/hwcomposer.omap4.so \
 	$(DEVICE_PREBUILT)/lib/libglslcompiler.so:system/lib/libglslcompiler.so \
 	$(DEVICE_PREBUILT)/lib/libIMGegl.so:system/lib/libIMGegl.so \
 	$(DEVICE_PREBUILT)/lib/libpvr2d.so:system/lib/libpvr2d.so \
@@ -135,7 +134,7 @@ DEVICE_PACKAGE_OVERLAYS := \
 
 PRODUCT_TAGS += dalvik.gc.type-precise
 
-PRODUCT_PACKAGES := \
+PRODUCT_PACKAGES += \
         LiveWallpapers \
         LiveWallpapersPicker \
         VisualizationWallpapers \

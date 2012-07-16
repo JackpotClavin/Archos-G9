@@ -15,6 +15,7 @@
 # All non-essential proprietary files for Archos G9 but are still kinda important
 PRODUCT_COPY_FILES := \
     vendor/archos/archos_g9/proprietary/bin/batteryd:/system/bin/batteryd \
+    vendor/archos/archos_g9/proprietary/bin/sdcard:/system/bin/sdcard \
     vendor/archos/archos_g9/proprietary/bin/akmd8975:/system/bin/akmd8975 \
     vendor/archos/archos_g9/proprietary/bin/last_kmsg:/system/bin/last_kmsg \
     vendor/archos/archos_g9/proprietary/bin/nand:/system/bin/nand \
@@ -25,6 +26,7 @@ PRODUCT_COPY_FILES := \
     vendor/archos/archos_g9/proprietary/bin/navd:/system/bin/navd \
     vendor/archos/archos_g9/proprietary/bin/rfkill_chmod.sh:/system/bin/rfkill_chmod.sh \
     vendor/archos/archos_g9/proprietary/lib/libedid.so:/system/lib/libedid.so \
+    vendor/archos/archos_g9/proprietary/vendor/lib/hw/hwcomposer.omap4.so:/system/vendor/lib/hw/hwcomposer.omap4.so \
     vendor/archos/archos_g9/proprietary/lib/libgps.so:/system/lib/libgps.so \
     vendor/archos/archos_g9/proprietary/lib/libgpsservices.so:/system/lib/libgpsservices.so \
     vendor/archos/archos_g9/proprietary/lib/libmcphalgps.so:/system/lib/libmcphalgps.so \
@@ -36,7 +38,9 @@ PRODUCT_COPY_FILES := \
     vendor/archos/archos_g9/proprietary/lib/hw/gps.archos.so:/system/lib/hw/gps.archos.so \
     vendor/archos/archos_g9/proprietary/lib/hw/lights.archos.so:/system/lib/hw/lights.archos.so \
     vendor/archos/archos_g9/proprietary/lib/hw/sensors.omap4.so:/system/lib/hw/sensors.omap4.so \
-    vendor/archos/archos_g9/proprietary/lib/libskia.so:/system/lib/libskia.so
+    vendor/archos/archos_g9/proprietary/lib/libskia.so:/system/lib/libskia.so \
+    vendor/archos/archos_g9/proprietary/app/Camera.apk:/system/app/Camera.apk \
+    vendor/archos/archos_g9/proprietary/app/FileManager.apk:/system/app/FileManager.apk
 
 # OMX Libraries for 512MB RAM Ducati binary
 PRODUCT_COPY_FILES += \

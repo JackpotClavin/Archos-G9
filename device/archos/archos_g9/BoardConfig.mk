@@ -44,6 +44,7 @@ TARGET_BOOTLOADER_BOARD_NAME := archos
 #TARGET_RECOVERY_UI_LIB := librecovery_ui_panda
 # device-specific extensions to the updater binary
 #TARGET_RELEASETOOLS_EXTENSIONS := device/ti/panda
+BOARD_HAS_NO_SELECT_BUTTON := true
 
 BOARD_EGL_CFG := device/archos/archos_g9/prebuilt/lib/egl/egl.cfg
 
